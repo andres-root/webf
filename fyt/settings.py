@@ -64,7 +64,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'fyt',
         'USER': 'fyt',
-        'PASSWORD': 'dev2014++',
+        'PASSWORD': '',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '',
     }
@@ -120,8 +120,8 @@ STATICFILES_DIRS = (
 # Mail Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'fyt.messenger@gmail.com'
-EMAIL_HOST_PASSWORD = 'riobravo'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
 # Custom Settings
