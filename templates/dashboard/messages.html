@@ -1,0 +1,86 @@
+{% extends 'dashboard/base.html' %}
+{% load staticfiles %}
+{% block title %} fyt.com | Dashboard {% endblock %}
+{% block content %}
+<div class="row tiles-container">
+   
+
+  <div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="grid simple ">
+                    <div class="grid-title no-border">
+                          <h4>ALL <span class="semi-bold">Messages (0 new)</span></h4>
+                        
+                    </div>
+                    <div class="grid-body no-border">
+                           
+                              <!--Title here-->
+
+
+<div class="row tiles-container">
+            <div class="tiles white ">
+                      <form method="post" action="/messages/send/">
+                        {% csrf_token %}
+                        <input type="hidden" name="conversation" value="{{ conversation.id }}" >
+                        <input type="hidden" name="sender" value="{{ user.id }}" >
+                        {% if conversation.receiver.id == user.id %}
+                          <input type="hidden" name="receiver" value="{{ conversation.sender.id }}" >
+                        {% else %}
+                          <input type="hidden" name="receiver" value="{{ conversation.receiver.id }}" >
+                        {% endif %}
+                        <textarea name="message" id="text-editor" class="form-control" rows=5 required></textarea>
+
+                        <button type="submit" class="btn btn-block btn-success">Send<span class="glyphicon glyphicon-chevron-right"></span></button>
+                      </form>
+            </div>
+
+          <div class="m-l-10 ">
+            <div class="tiles white ">
+            {% for message in messages %}
+              <!-- START-CONVERSATION -->
+              <div class="p-t-20 p-b-15 b-b b-grey">
+                <div class="post overlap-left-10">
+                  {% if message.sender.id == user.id %}
+                    <div class="user-profile-pic-2x white-border">
+                        <img width="45" height="45" src="/media/{{user.avatar}}" data-src="/media/{{user.avatar}}" data-src-retina="/media/{{user.avatar}}" alt=""> 
+                    </div>
+                  {% else %}
+                  <div class="inline pull-right">
+                              <div class="user-profile-pic-wrapper">
+                                <div class="user-profile-pic-2x white-border">
+                                    <img width="45" height="45" src="/media/{{message.sender.avatar}}" data-src="/media/{{message.sender.avatar}}" data-src-retina="/media/{{message.sender.avatar}}" alt=""> 
+                                </div>
+                              </div>
+                    </div>
+                    
+                  {% endif %}
+                  <div class="info-wrapper small-width inline">
+                    <div class="info text-black ">
+                      <p>{{message.message}}</p>
+                      <p class="muted small-text">{{sender.user}} </p>
+                      <p class="muted small-text">{{message.date_created}} </p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                  
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <!-- END-CONVERSATION -->
+              {% endfor %}
+
+            </div>
+            
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>     
+</div>
+{% endblock %}

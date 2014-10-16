@@ -1,0 +1,26 @@
+.profile-btn {
+	height: 51px;
+	border: none;
+}
+
+/**
+Customized Bootstrap Styles
+**/
+.navbar {
+	margin-bottom: 0 !important;
+	background: #fff;
+}
+
+.form-control.top-search {
+	width: 211px;
+}
+
+.navbar-nav .blue a {
+	color: #5bc0de !important;
+	font-weight: bold;
+}
+
+.navbar-nav .red a {
+	color: red !important;
+	font-weight: bold;
+}

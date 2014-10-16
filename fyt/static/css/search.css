@@ -1,0 +1,104 @@
+/**
+Bootstrap Customized Styles
+
+.col-sm-1 {
+	width: 10.333333%;
+}
+
+.col-sm-2 {
+	width: 10.666667%;
+}
+**/
+.navbar-default {
+	background-color: #fff;
+}
+
+
+.third .col-md-4 {
+	margin-bottom: 25px;
+}
+
+.trainer .container {
+	padding-top: 10px;
+	width: 400px;
+	color: #999;
+}
+
+/**
+General Styles
+**/
+.first {
+	margin-top: 50px;
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	color: #fff;
+	background: url('../img/web-assets/web-assets-30.png') repeat;
+
+}
+
+.second {
+	width: 100%;
+	height: 300px;
+	background: #f8f8f8;
+	border-bottom: 1px solid #ccc;
+}
+
+.second .filters {
+	padding-top: 10px;
+}
+
+.second .filters h4 {
+	font-weight: bolder;
+}
+
+.second .filters p {
+	font-style: italic;
+	color: #999;
+}
+
+.second .filters .col-md-3 {
+	padding-left: 35px;
+}
+
+.third {
+	background: #efefef;
+}
+
+.trainer {
+	width: 385px;
+	height: 250px;
+	background: #fff;
+	color: #fff;
+	border-bottom: 2px solid #ccc;
+}
+
+.trainer header{
+	width: 100%;
+	height: 100px;
+}
+
+.trainer header img {
+	padding-left: 13px;
+	width: 400px;
+	height: 170px;
+}
+
+.trainer .row h1 {
+	font-weight: bolder;
+	padding-left: 14px;
+	color: #5bc0de;
+}
+
+.trainer .stars {
+	color: #5bc0de;
+}
+
+.divisor {
+	border-left: 1px solid #ccc;
+	height: 80px;
+}
+
+.third .grid-trainers {
+	padding-top: 30px;
+}

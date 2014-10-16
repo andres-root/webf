@@ -1,0 +1,72 @@
+{% extends 'dashboard/base.html' %}
+{% load staticfiles %}
+{% block title %} fyt.com | Dashboard {% endblock %}
+{% block content %}
+<div class="row tiles-container">
+   
+
+  <div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="grid simple ">
+                    <div class="grid-title no-border">
+                          <h4>ALL <span class="semi-bold">Messages (0 new)</span></h4>
+                        <div class="tools"> <a href="javascript:;" class="collapse"></a>
+      <a href="#grid-config" data-toggle="modal" class="config"></a>
+      <a href="javascript:;" class="reload"></a>
+      <a href="javascript:;" class="remove"></a>
+                        </div>
+                    </div>
+                    <div class="grid-body no-border">
+                           
+                              <!--Title here-->
+
+<div class="row tiles-container">
+          <div class="m-l-10 ">
+            <div class="tiles white ">
+            {% for conversation in conversations %}
+              <!-- START-CONVERSATION -->
+              <div class="p-t-20 p-b-15 b-b b-grey">
+                <div class="post overlap-left-10">
+                  <div class="user-profile-pic-wrapper">
+                    <div class="user-profile-pic-2x white-border">
+          <img width="45" height="45" src="/media/{{conversation.receiver.avatar}}" data-src="/media/{{conversation.receiver.avatar}}" data-src-retina="/media/{{conversation.receiver.avatar}}" alt=""> 
+          </div>
+                  </div>
+                  <div class="info-wrapper small-width inline">
+                    <div class="info text-black ">
+                      <h5><a href="{% url 'dashboard_messages' conversation.id %}"><span class="semi-bold">Conversation with <span class="text-info">
+                      {% if conversation.sender.id == user.id %}
+                        {{conversation.receiver.first_name}} {{conversation.receiver.last_name}}</span></span></a></h5>
+                      {% else %}
+                        {{conversation.sender.first_name}} {{conversation.sender.last_name}}</span></span></a></h5>
+                      {% endif %}
+                      <p>...</p>
+                      <p class="muted small-text">{{conversation.date_created}} </p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="inline pull-right">
+                    <div class="tiles text-white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-star-o fa-lg"></i> </div>
+                    <div class="tiles white p-t-5 p-l-5 p-b-5 p-r-5 inline"> <i class="fa fa-comment-o fa-lg"></i> </div>
+                  </div>
+                  
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <!-- END-CONVERSATION -->
+              {% endfor %}
+
+            </div>
+            
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>     
+</div>
+{% endblock %}

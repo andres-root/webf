@@ -1,0 +1,189 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Fitness</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" id="style-css" href="https://necolas.github.io/normalize.css/3.0.1/normalize.css" type="text/css" media="all">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <form action="search.html" class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control top-search" placeholder="Search by keyword or trainer">
+				        </div>
+				        <a href="search.html"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></a>
+				      </form>
+				      <ul class="nav navbar-nav navbar-right">
+				      		{% if user.is_authenticated %}
+				      			<div class="btn-group">
+				      			  <div class="btn-group">
+				      			    <button type="button" class="profile-btn btn btn-default dropdown-toggle" data-toggle="dropdown">
+				      			      {{ user.username }}
+				      			      <span class="caret"></span>
+				      			    </button>
+				      			    <ul class="dropdown-menu">
+				      			      <li><a href="/dashboard/">Dashboard</a></li>
+				      			      <li><a href="/signout/">Log Out</a></li>
+				      			    </ul>
+				      			  </div>
+				      			</div>
+				      		{% else %}
+					        	<li class="red"><a href="/signup/">Sign Up</a></li>
+				        		<li class="blue"><a data-toggle="modal" data-target=".bs-example-modal-sm" href="#">Log In</a></li>
+				      		{% endif %}
+				        <!-- Small modal -->
+
+
+				      		
+					        	
+				      		
+				        
+				     <!--    <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+				        </li> -->
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav><!-- End Navbar-->
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-sm">
+				    <div class="modal-content login-modal">
+				      	<form method="post" action="/signin/">
+							{% csrf_token %}
+							{% if user_type %}
+								<input type="hidden" name="user_type" value="{{ user_type }}"></input>
+							{% else %}
+								<input type="hidden" name="user_type" value="1"></input>
+							{% endif %}
+				      		<div class="form-cont">
+				      			<div class="row">
+									<div class="col-sm-12">
+										<label for="username">Username</label>
+										<input type="text" name="username" class="form-control" required>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<label for="name">Password</label>
+										<input type="password" name="password" class="form-control" required>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-info">Finish</button>
+									</div>
+								</div>
+							</div>
+						</form>
+				    </div>
+				  </div>
+				</div>
+				<section class="first">
+			      	<div class="container">
+				      	<div class="search-cont">
+					        <form method="post" action="/search/">
+					        	{% csrf_token %}
+						        <h1>Find trainers in your area</h1>
+						        <p>Welcome to the new you</p>
+						        <div class="row transparent-black">
+						        	<div class="col-md-6">
+							        	<input type="text" class="form-control" placeholder="CITY OR ZIP CODE" required>
+							        </div>
+						        	<div class="col-md-4">
+											<button type="submit" class="btn btn-primary">Search!</button>
+									</div>
+								</div>
+							</form>
+						</div>
+			      </div>
+				</section><!--End First Section-->
+				<section class="second">
+					<div class="container">
+						<div class="grid-cont">
+							<div class="fila-cent row">
+								<article>
+									<center><h1>Browse Through the most popular cities</h1></center>
+								</article>
+							</div>
+							<div class="fila-cent row">
+								<div class="trainor-cont col-md-3"><img src="{% static "img/web-assets/web-assets-24.png" %}"/></div>
+								<div class="trainor-cont col-md-3"><img src="{% static "img/web-assets/web-assets-25.png" %}"/></div>
+								<div class="trainor-cont col-md-3"><img src="{% static "img/web-assets/web-assets-26.png" %}"/></div>
+							</div>
+							<div class="fila-cent row">
+								<div class="trainor-cont col-md-3"><img src="{% static "img/web-assets/web-assets-27.png" %}"/></div>
+								<div class="trainor-cont col-md-3"><img src="{% static "img/web-assets/web-assets-28.png" %}"/></div>
+								<div class="trainor-cont col-md-3"><img src="{% static "img/web-assets/web-assets-29.png" %}"/></div>
+							</div>
+						</div>
+					</div>
+				</section><!--End Second Section-->
+				<section class="third">
+					<div class="container">
+							<div class="grid-cont">
+								<div class="fila-cent row">
+									<div class="trainor-cont col-md-3">
+										<article>
+											<img src="{% static "img/web-assets-08.png" %}">
+											<h2>Learn</h2>
+											<p>The best way to get in shape from the best trainers in your area</p>
+										</article>
+									</div>
+									<div class="trainor-cont col-md-3">
+										<article>
+											<img src="{% static "img/web-assets-07.png" %}">
+											<h2>Build</h2>
+											<p>Build your reputation and clientel while doing what you love</p>
+										</article>
+									</div>
+									<div class="trainor-cont col-md-3">
+										<article>
+											<img src="{% static "img/web-assets-06.png" %}">
+											<h2>Trust</h2>
+											<p>From meet-ups and verifications to secure payment processing, we make sure your focus on what matter most.</p>
+										</article>
+									</div>
+								</div>
+							</div>
+						</div>
+				</section><!--End Third Section-->
+				<footer>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4"></div>
+							<div class="col-md-4"></div>
+							<div class="col-md-4">© Fyt | 2014</div>
+						</div>
+					</div>
+				</footer>				
+		</div>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	</body>
+</html>

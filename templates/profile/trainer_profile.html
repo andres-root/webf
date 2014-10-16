@@ -1,0 +1,368 @@
+{% extends 'profile/base.html' %}
+{% load staticfiles %}
+{% block title %} fyt.com {% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-md-3">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="grid simple">
+					<div class="grid-body no-border profile-photo">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="user-info-wrapper">
+								  <div class="profile-wrapper"> <img src="/static/dashboard/img/profiles/trainer.png"  alt="" data-src="/static/dashboard/img/profiles/trainer.png" data-src-retina="/static/dashboard/img/profiles/trainer.png" width="290" height="215" /> </div>
+								</div>
+							</div>
+						</div>
+					</div>     
+				</div>     
+			</div>     
+		</div>
+	</div>    
+
+
+<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="grid simple ">
+					<div class="grid-title no-border">
+						<h4><span class="text-black semi-bold">{{ trainer.first_name }} {{ trainer.last_name }}</span></h4>
+						<div class="tools">
+							<a href="#grid-config" data-toggle="modal" class="config"></a>
+						</div>
+					</div>
+					<div class="grid-body no-border">
+						<div class="row">
+							<div class="col-md-12">
+								<!-- BEGIN SALES WIDGET WITH FLOT CHART -->
+								          <div class="tiles white add-margin">
+								            <div>
+								              <div class="row b-grey b-b xs-p-b-20">
+								                <div class="col-md-4">
+								                  <h4 class="text-black semi-bold">Per Session</h4>
+								                  <h3 class="text-success semi-bold">$<span data-animation-duration="600" data-value="55" class="animate-number"></span></h3>
+								                </div>
+								                <div class="col-md-8">
+								                  <div class="m-t-10">
+								                    <div class="pull-left"> Session to travel </div>
+								                    <div class="pull-right"> <span class="text-success">$65</span> </div>
+								                    <div class="clearfix"></div>
+								                    <div class="pull-left"> Additional person (max. group of 4) </div>
+								                    <div class="pull-right"> <span class="text-success">$10</span> </div>
+								                    <div class="clearfix"></div>
+								                    <div class="pull-left"> Bootcamps (per person): </div>
+								                    <div class="pull-right"> <span class="text-success">$5</span> </div>
+								                    <div class="clearfix"></div>
+								                    <div class="pull-left"> Cancellation fee under 2 hrs: </div>
+								                    <div class="pull-right"> <span class="text-success">$10</span> </div>
+								                    <div class="clearfix"></div>
+								                  </div>
+								                </div>
+								                
+								              </div>
+								              <div class="row b-grey">
+								                <div class="col-md-8">
+								                  <div class="m-t-10">
+								                 	<p>
+									                    <a href="#" class="hashtags m-b-5"> #Group</a>
+									                    <a href="#" class="hashtags m-b-5"> #Individual </a>
+									                    <a href="#" class="hashtags m-b-5"> #Weight Loss </a>
+									                    <a href="#" class="hashtags m-b-5"> #Has Facilities </a>
+								                    </p>
+								                   
+								                  </div>
+								                </div>
+								                <div class="col-md-3">
+								                  <div class="m-t-10">
+								                    <button class="btn btn-block btn-success" data-toggle="modal" data-target="#myModal" type="button">Book Now!</button>
+								                  </div>
+								                </div>
+								              </div>
+								            </div>
+								          </div>
+								          <!-- END SALES WIDGET WITH FLOT CHART -->
+
+							</div>
+						</div>
+					</div>     
+				</div>     
+			</div>     
+		</div>
+	</div>   
+
+
+</div>
+
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="grid simple ">
+							<div class="grid-title no-border">
+								<h4><span class="text-black semi-bold">About Me</span></h4>
+								<div class="tools">
+								</div>
+							</div>
+							<div class="grid-body no-border">
+								<p>
+									I’m a high-energy trainer tht loves to
+									transform clients. Give me just 30 days
+									and you will have a great health.
+								</p>
+								<div class="post p-t-10 p-b-10">
+			                        <ul class="action-bar no-margin p-b-20 ">
+			                          <li><a href="#" class="muted bold"><i class="fa fa-comment  m-r-10"></i>3</a> </li>
+			                          <li><a href="#" class="text-error bold"><i class="fa fa-heart  m-r-10"></i>18</a> </li>
+			                        </ul>
+			                        <div class="clearfix"></div>
+		                      </div>
+							</div>
+						</div>
+					</div>     
+				</div>     
+			</div>     
+		</div>     
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="grid simple ">
+							<div class="grid-title no-border">
+								<h4><span class="text-black semi-bold">Information</span></h4>
+								<div class="tools">
+								</div>
+							</div>
+							<div class="grid-body no-border">
+								<p>
+													
+				                    <div class="pull-left">Responsiveness: </div>
+				                    <div class="pull-right"> <span class="text-success">100%</span> </div>
+				                    <div class="clearfix"></div>
+				                    <div class="pull-left">Response Time: </div>
+				                    <div class="pull-right"> <span class="text-success">3 Hours</span> </div>
+				                    <div class="clearfix"></div>
+									                 
+								</p>
+							</div>
+						</div>
+					</div>     
+				</div>     
+			</div>     
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="grid simple">
+						<div class="grid-title no-border">
+							<h4><span class="text-black semi-bold">My Space:</span> <a href="/spaces/">The Gym</a></h4>
+							<div class="tools">
+							</div>
+						</div>
+							<div class="grid-body no-border profile-photo">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="user-info-wrapper">
+										  <div class="profile-wrapper"> <img src="/static/dashboard/img/profiles/trainer.png"  alt="" data-src="/static/dashboard/img/profiles/trainer.png" data-src-retina="/static/dashboard/img/profiles/trainer.png" width="290" height="215" /> </div>
+										</div>
+									</div>
+								</div>
+							</div>     
+						</div>     
+					</div>     
+				</div>
+			</div> 
+		</div>
+	</div>
+	<div class="col-md-8">
+	          <ul class="nav nav-tabs" id="tab-01">
+	            <li class="active"><a href="#reviews">Reviews</a></li>
+	            <li class=""><a href="#calendar">Calendar</a></li>
+	            <li><a href="#verification">Verification</a></li>
+	            <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Media <b class="caret"></b> </a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#">Photos</a></li>
+	                <li><a href="#">Videos</a></li>
+	                <li><a href="#">Press</a></li>
+	              </ul>
+	            </li>
+	          </ul>
+	          <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+	          <div class="tab-content">
+	            <div class="tab-pane active" id="reviews">
+	              <div class="row tiles-container">
+	                        <div class="m-l-10 ">
+	                          <div class="tiles grey p-t-15 p-b-15 p-l-25 ">
+	                            <h5 class="text-black semi-bold">ALL COMMENTS</h5>
+	                          </div>
+	                          <div class="tiles white ">
+	                            <div class="p-t-20 p-b-15 b-b b-grey">
+	                              <div class="post overlap-left-10">
+	                                <div class="user-profile-pic-wrapper">
+	                                  <div class="user-profile-pic-2x white-border">
+	              					<img width="45" height="45" src="/static/dashboard/img/profile-pic.jpg" data-src="/static/dashboard/img/profile-pic.jpg" data-src-retina="/static/dashboard/img/profile-pic.jpg" alt=""> 
+	              					</div>
+	                                </div>
+	                                <div class="info-wrapper small-width inline">
+	                                  <div class="info text-black ">
+	                                    <p>Got great results with him! </p>
+	                                    <p class="muted small-text"> 2 mins ago </p>
+	                                  </div>
+	                                  <div class="clearfix"></div>
+	                                </div>
+	                                
+	                                <div class="clearfix"></div>
+	                              </div>
+	                            </div>
+	                            <div class="p-t-20 p-b-15 b-b b-grey">
+	                              <div class="post overlap-left-10">
+	                                <div class="user-profile-pic-wrapper">
+	                                  <div class="user-profile-pic-2x white-border">
+	              					<img width="45" height="45" src="/static/dashboard/img/profile-pic.jpg" data-src="/static/dashboard/img/profile-pic.jpg" data-src-retina="/static/dashboard/img/profile-pic.jpg" alt=""> 
+	              					</div>
+	                                </div>
+	                                <div class="info-wrapper small-width">
+	                                  <div class="info text-black ">
+	                                    <p>He's such a good trainer. </p>
+	                                    <p class="muted small-text"> 2 mins ago </p>
+	                                  </div>
+	                                  <div class="clearfix"></div>
+	                                </div>
+	                               
+	                                <div class="clearfix"></div>
+	                              </div>
+	                            </div>
+	                            <div class="p-t-20 p-b-15 ">
+	                              <div class="post overlap-left-10">
+	                                <div class="user-profile-pic-wrapper">
+	                                  <div class="user-profile-pic-2x white-border">
+	              					<img width="45" height="45" src="/static/dashboard/img/profile-pic.jpg" data-src="/static/dashboard/img/profile-pic.jpg" data-src-retina="/static/dashboard/img/profile-pic.jpg" alt=""> 
+	              					</div>
+	                                </div>
+	                                <div class="info-wrapper small-width">
+	                                  <div class="info text-black ">
+	                                    <p>I'm very happy with my abs. Great! </p>
+	                                    <p class="muted small-text"> 2 mins ago </p>
+	                                  </div>
+	                                  <div class="clearfix"></div>
+	                                </div>
+	                                
+	                                <div class="clearfix"></div>
+	                              </div>
+	                            </div>
+	                          </div>
+	                          
+	                        </div>
+	              </div>
+	            </div>
+	            <div class="tab-pane" id="calendar">
+	              <!-- Begin Calendar Styles -->
+	              <link href="/static/dashboard/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" media="screen"/>
+	              <link href="/static/dashboard/plugins/boostrap-checkbox/css/bootstrap-checkbox.css" rel="stylesheet" type="text/css" media="screen"/>
+	              <!-- End Calendar Styles -->
+	              <div class="row" style="max-height:600px;">
+	              <div class="tiles row tiles-container white no-padding">
+	                <div class="col-md-8 tiles white no-padding">
+	                  <div class="tiles-body">
+	                    <div class="full-calender-header">
+	                      <div class="pull-left">
+	                        <div class="btn-group ">
+	                          <button class="btn btn-success" id="calender-prev"><i class="fa fa-angle-left"></i></button>
+	                          <button class="btn btn-success" id="calender-next"><i class="fa fa-angle-right"></i></button>
+	                        </div>
+	                      </div>
+	                      <div class="pull-right">
+	                        <div data-toggle="buttons-radio" class="btn-group">
+	                          <button class="btn btn-primary active" type="button" id="change-view-month">month</button>
+	                          <button class="btn btn-primary " type="button" id="change-view-week">week</button>
+	                          <button class="btn btn-primary" type="button" id="change-view-day">day</button>
+	                        </div>
+	                      </div>
+	                      <div class="clearfix"></div>
+	                    </div>
+	                    <div id='calendar'></div>
+	                  </div>
+	                </div>
+	              </div>
+	              </div>
+	              <br>
+	            </div>
+	            <div class="tab-pane" id="verification">
+	              <div class="row">
+	                <div class="col-md-12">
+	                  <h3>Trainer's Verification</h3>
+	                  <p>This information is important</p>
+	                  <br>
+	                  <p><a href="#" class="btn-social"><i class="icon-facebook"></i></a> <a href="#" class="btn-social"><i class="icon-twitter"></i> </a> <a href="#" class="btn-social"><i class="icon-dribbble"></i></a> <a href="#" class="btn-social"><i class="icon-pinterest-sign"></i></a> <a href="#" class="btn-social"><i class="icon-tumblr"></i> </a> <a href="#" class="btn-social"><i class="icon-linkedin-sign"></i> </a> </p>
+	                </div>
+	                <div class="col-md-12">
+	                						    <div class="grid simple vertical green">
+	                							<div class="grid-title no-border">
+	                								<h4>Address <span class="semi-bold"></span></h4>
+	                								<div class="tools">
+	                									<a href="javascript:;" class="expand"></a>
+	                									<a href="#grid-config" data-toggle="modal" class="config"></a>
+	                								</div>
+	                							</div>
+	                							<div class="grid-body no-border" style="overflow: hidden; display: none;">
+	                								<div class="row-fluid ">
+	                									    <address class="margin-bottom-20 margin-top-10">
+	                											<strong>Twitter, Inc.</strong><br>
+	                											795 Folsom Ave, Suite 600<br>
+	                											San Francisco, CA 94107<br>
+	                											<abbr title="Phone">P:</abbr> (123) 456-7890
+	                										</address>											 
+	                										<address>
+	                											<strong>Full Name</strong><br>
+	                											<a href="mailto:#">first.last@example.com</a>
+	                										</address>
+	                								</div>
+	                							</div>
+	                						</div>
+	                						<div class="grid simple vertical green">
+	                							<div class="grid-title no-border">
+	                								<h4>US ID <span class="semi-bold"></span></h4>
+	                								<div class="tools">
+	                									<a href="javascript:;" class="expand"></a>
+	                									<a href="#grid-config" data-toggle="modal" class="config"></a>
+	                								</div>
+	                							</div>
+	                							<div class="grid-body no-border" style="overflow: hidden; display: none;">
+	                								<h4>verified</h4>
+	                							</div>
+	                						</div>
+	                					</div>
+	              </div>
+	            </div>
+	          </div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Book Now</h4>
+      </div>
+      <div class="modal-body" style="background-color: #ffffff">
+      	<h2>Message me to get started!</h2>
+      	<p>Include all the details about the session</p>
+	      	<form method="post" action="/messages/create/">
+				{% csrf_token %}
+				<input type="hidden" name="sender" value="{{ user.id }}" >
+				<input type="hidden" name="receiver" value="{{ trainer.id }}" >
+				<textarea name="message" id="text-editor" class="form-control" rows=10 required></textarea>
+      </div>
+      <div class="modal-footer">
+      	<button type="submit" class="btn btn-block btn-success">Send<span class="glyphicon glyphicon-chevron-right"></span></button>
+      </div>
+	  		</form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+body {
+	background-color: #E5E9EC;
+}
+
+.user-info-wrapper {
+	margin: 0;
+}
+
+.user-info-wrapper .profile-wrapper {
+	height: auto;
+	width: auto;
+	border-radius: 0;
+	margin: 0;
+}

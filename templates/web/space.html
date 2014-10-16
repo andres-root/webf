@@ -1,0 +1,420 @@
+	{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Fitness.me</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" id="style-css" href="https://necolas.github.io/normalize.css/3.0.1/normalize.css" type="text/css" media="all">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="print" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.0/fullcalendar.print.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.0/fullcalendar.css">
+        <link rel="stylesheet" type="text/css" href="{% static "css/trainer.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
+        <style>
+        	#calendar {
+        		width: 900px;
+        		margin: 40px auto;
+        	}
+        </style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <form action="search.html" class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control top-search" placeholder="Search by keyword or trainer">
+				        </div>
+				        <a href="search.html"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></a>
+				      </form>
+				      <ul class="nav navbar-nav navbar-right">
+				      		{% if user.is_authenticated %}
+				      			<div class="btn-group">
+				      			  <div class="btn-group">
+				      			    <button type="button" class="profile-btn btn btn-default dropdown-toggle" data-toggle="dropdown">
+				      			      {{ user.username }}
+				      			      <span class="caret"></span>
+				      			    </button>
+				      			    <ul class="dropdown-menu">
+				      			      <li><a href="/profile/{{ user.id }}">Dashboard</a></li>
+				      			      <li><a href="/signout/">Log Out</a></li>
+				      			    </ul>
+				      			  </div>
+				      			</div>
+				      		{% else %}
+					        	<li class="red"><a href="/signup/">Sign Up</a></li>
+				        		<li class="blue"><a data-toggle="modal" data-target=".bs-example-modal-sm" href="#">Log In</a></li>
+				      		{% endif %}
+				        <!-- Small modal -->
+
+
+				      		
+					        	
+				      		
+				        
+				     <!--    <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+				        </li> -->
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav><!-- End Navbar-->
+				<section class="first">
+			      <div class="container-fluid">
+			      	<div class="row">
+			      			<h1>{{ trainer.user.username }}</h1>
+
+			      		<div class="col-lg-12">
+			      		</div>
+			      	</div>
+			      </div>
+				</section><!--End First Section-->
+				<section class="second">
+			      <div class="container">
+			      	<div class="row">
+			      		<div class="col-lg-3">
+			      			<figure class="photo">
+			      				<img src="{% static "img/web-assets-32.png" %}" />
+			      			</figure>
+			      		</div>
+			      		<div class="col-lg-9 trainer-info">
+			      			<div class="row">
+				      		    <div class="col-md-9">
+				      		    	<div class="row">
+				      		    		<div class="col-md-4">
+				      		    			<h1 class="value">${{ trainer.charge }}</h1>
+				      		    			<p>{{ trainer.payment_method }}</p>
+				      		    		</div>
+				      		    		<div class="col-md-8">
+				      		    			<div class="row">
+				      		    				<h3>Promotions</h3>
+				      		    				<p>Book 10 or more sessions for 15% off!</p>
+				      		    			</div>
+				      		    			<div class="row">
+				      		    				<h3>Groups</h3>
+				      		    				<p>${{ trainer.charge }} for each individual add on</p>
+				      		    			</div>
+				      		    		</div>
+				      		    	</div>
+			      					<div class="row trainer-info">
+					      				<div class="col-md-9">
+					      					<p>
+					      						Tags
+					      					</p>
+					      					<span class="label label-info">Group</span>
+					      					<span class="label label-info">Individual</span>
+					      					<span class="label label-info">Weight loss</span>
+					      					<span class="label label-info">Endurance</span>
+					      					<span class="label label-info">Has facilities</span>
+					      					<span class="label label-info">Swimming</span>
+					      					<span class="label label-info">Male</span>
+					      					<span class="label label-info">Female</span>
+					      					<span class="label label-info">Promotion</span>
+					      					<span class="label label-info">Group Rate</span>
+					      					<span class="label label-default">More...</span>
+					      				</div>
+				      					<div class="col-md-4">
+				      					
+				      					</div>
+						        	</div>
+						        </div>
+				      		    <div class="col-md-3">
+					      		    <!--div class="row booking">
+					      		    	<div class="row">
+					      		    		<div class="col-sm-6">
+					      		    			<label>Sessions: </label>
+					      		    		</div>
+					      		    		<div class="col-sm-6">
+					      		    			<input type="text" name="sessions" class="form-control">
+					      		    		</div>
+					      		    	</div>
+					      		    	<br>
+					      		    	<div class="row">
+					      		    		<div class="col-sm-6">
+					      		    			<label>No. of People: </label>
+					      		    		</div>
+					      		    		<div class="col-sm-6">
+					      		    			<input type="text" name="people" class="form-control">
+					      		    		</div>
+					      		    	</div>
+					      		    </div-->
+					      		    <div class="row">
+					      		    	<!--div class="row">
+					      		    		<div class="col-sm-6">
+					      		    			<h3>Subtotal: </h3>
+					      		    		</div>
+					      		    		<div class="col-sm-6">
+					      		    			<h3 class="value">$ 110</h3>
+					      		    		</div>
+					      		    	</div-->
+					      		    	<div class="row message-cont">
+				      		    				<figure>
+				      		    					<img src="{% static "img/web-assets-33.png" %}">
+				      		    				</figure>
+				      		    				<h3>Message me to get started!</h3>
+				      		    				<p>
+				      		    					<ul>
+				      		    						<li>Meet and greet</li>
+				      		    						<li>Booking/Scheduling</li>
+				      		    						<li>Questions and comments</li>
+				      		    					</ul>
+				      		    				</p>
+				      		    			
+					      		    	</div>
+					      		    	<div class="row">
+					      		    		<div class="col-md-12">
+						      		    		<!-- Button trigger modal -->
+						      		    		<button class="btn btn-danger book-btn" data-toggle="modal" data-target="#myModal">
+						      		    		  Send message <span class="glyphicon glyphicon-chevron-right"></span>		
+						      		    		</button>
+					      		    		</div>
+					      		    		<!-- Modal -->
+					      		    		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					      		    		  <div class="modal-dialog">
+					      		    		    <div class="modal-content">
+					      		    		      <div class="modal-header">
+					      		    		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					      		    		        <h4 class="modal-title" id="myModalLabel">Send Message</h4>
+					      		    		      </div>
+					      		    		      <div class="modal-body">
+					      		    		        <form method="post" action="/book/">
+					      		    			      			{% csrf_token %}
+					      		    			      			<input type="hidden" name="id_sender" value="{{ user.id }}" >
+					      		    			      			<input type="hidden" name="id_receiver" value="{{ trainer.user.id }}" >
+					      		    			            		<div class="form-cont">
+					      		    			      				<div class="row">
+					      		    			      					<h1>I’m starting to see those abs already</h1>
+					      		    			      					<div class="col-sm-2">
+					      		    			      						<label>Sessions: </label>
+					      		    			      					</div>
+					      		    			      					<div class="col-sm-4">
+					      		    			      						{{ bookForm.sessions }}
+					      		    			      						<!--input type="text" name="sessions" class="form-control"-->
+					      		    			      					</div>
+					      		    			      				</div>
+					      		    			      				<br>
+					      		    			      				<div class="row">
+					      		    			      					<div class="col-sm-2">
+					      		    			      						<label>No. of People: </label>
+					      		    			      					</div>
+					      		    			      					<div class="col-sm-4">
+					      		    			      						{{ bookForm.people }}
+					      		    			      						<!--input type="text" name="people" class="form-control"-->
+					      		    			      					</div>
+					      		    			      				</div>
+
+
+
+					      		    			      				<div class="row">
+					      		    			      					<div class="col-md-2">
+					      		    			      						<label for="name">Message</label>
+					      		    			      					</div>
+					      		    			      					<div class="col-md-4">
+					      		    			      						{{ bookForm.message }}
+					      		    			      						<!-- textarea name="message" class="form-control" rows="3"></textarea-->
+					      		    			      					</div>
+					      		    			      				</div>
+					      		    			      				<div class="row">
+					      		    			      					<div class="col-md-6">
+					      		    			      						<label for="name"></label>
+					      		    			      					</div>
+					      		    			      					<div class="col-md-6">
+					      		    			      						<button type="submit" class="btn btn-info">Done!<span class="glyphicon glyphicon-chevron-right"></span></button>
+					      		    			      					</div>
+					      		    			      				</div>
+					      		    			      			</div>
+					      		    			      		</form>
+					      		    		      </div>
+					      		    		      
+					      		    		    </div>
+					      		    		
+
+					      		    		
+
+
+					      		    	</div>
+					      		    	
+					      		    </div>
+				      		    </div>
+					        </div>
+			      	</div>
+			      </div>
+				</section><!--End Second Section-->
+				<section class="third">
+					<div class="container-fluid">
+						<div class="row info-cont">
+							<div class="col-md-3">
+								<div class="row about-title">
+										<h3 class="tit-about"><span>About Me</span></h3>
+									</div>
+								<div class="row about-cont">
+									<div class="col-md-12">
+										<p>Give me one 30 minute session and I’ll 
+											get your rock solid abs and calves for 
+											days. My focus is getting you results so 
+											fast your clothes won’t fit by the end of 
+											the session.
+											A $10 cancellation fee is applied to 
+											sessions cancelled within 24 hours of 
+											scheduled time.</p>
+									</div>
+								</div>
+								<div class="row details-cont">
+									<div class="col-md-12">
+										<div class="row">
+											<div class="col-md-6">
+												<h3>Responsiveness:</h3>
+											</div>
+											<div class="col-md-6 values">
+												<h3>95%</h3>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<h3>Response Time:</h3>
+											</div>
+											<div class="col-sm-6 values">
+												<h3>6 hours</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row space-title">
+										<h3 class="tit-place"><span>My Space: </span> {{ user.username }}'s Gym</h3>
+									</div>
+								<div class="row space-cont">
+									<figure>
+										<img src="{% static "img/gym.jpg" %}"/>
+									</figure>
+								</div>
+								
+							</div>
+							<div class="col-md-8">
+								<div class="content">
+									<header>
+										<ul class="nav nav-tabs nav-justified">
+  											<li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
+  											<li><a href="#calendar" data-toggle="tab">Calendar</a></li>
+  											<li><a href="#certification" data-toggle="tab">Verification</a></li>
+  											<li><a href="#photos" data-toggle="tab">Photos</a></li>
+										</ul>
+									</header>
+									<section class="cont-data">
+										<div class="tab-content">
+											<div class="tab-pane fade in active" id="reviews">
+												<div class="row">
+													<form method="post" action="/review/">
+														{% csrf_token %}
+														<input type="hidden" name="id_sender" value="{{ user.id }}" >
+				      		    			      		<input type="hidden" name="id_receiver" value="{{ trainer.user.id }}" >
+				      		    			      		<div class="send-comment">
+															<textarea class="form-control" name="content"></textarea>
+															<button type="submit" class="btn btn-primary">Send</button>
+				      		    			      		</div>
+													</form>
+												</div>
+												{% for r in reviews %}
+													<!--Comment -->
+													<div id="comments">
+														<div class="row">
+															<div class="col-md-2">
+																<figure>
+																	<img src="{% static "img/profile-pic.jpg" %}">
+																</figure>
+															</div>
+															<div class="col-md-8">
+																<div class="comment-cont">
+																	<p>{{ r.content }}</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												{% endfor %}
+											</div>
+										  	<div class="tab-pane fade" id="calendar">
+										  		
+										  	</div>
+										  	<div class="tab-pane fade" id="certification">Certifications here</div>
+										  	<div class="tab-pane fade" id="certification">Photos</div>
+										</div>
+									</section>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</section>
+		</div>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="{% static "js/calendar/moment.min.js" %}"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.0/fullcalendar.min.js"></script>
+		<script src="{% static "js/calendar/jquery-ui.custom.min.js" %}"></script>
+
+        <script type="text/javascript">
+        	$('#myTab a').click(function (e) {
+        	  e.preventDefault()
+        	  $(this).tab('show')
+        	})
+        </script>
+      	<script>
+      		$(document).ready(function() {
+      			$('#calendar').fullCalendar({
+      				defaultDate: '2014-06-12',
+      				editable: false,
+      				events: [
+      					{
+      						title: 'Booked All Day',
+      						start: '2014-06-01'
+      					},
+      					{
+      						title: 'Booked',
+      						start: '2014-06-09T08:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-09T16:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-09T16:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-10T15:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-11T09:00:00'
+      					},
+      				]
+      			});
+      			
+      		});
+      	</script>
+	</body>
+</html>

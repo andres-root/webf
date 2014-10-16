@@ -1,0 +1,179 @@
+{% extends 'dashboard/base.html' %}
+{% load staticfiles %}
+{% block title %} fyt.com | Dashboard {% endblock %}
+{% block content %}
+<div class="row tiles-container">
+   
+
+  <div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="grid simple ">
+                    <div class="grid-title no-border">
+                          <h4>ALL <span class="semi-bold">INVOICES</span></h4>
+                        <div class="tools"> <a href="javascript:;" class="collapse"></a>
+      <a href="#grid-config" data-toggle="modal" class="config"></a>
+      <a href="javascript:;" class="reload"></a>
+      <a href="javascript:;" class="remove"></a>
+                        </div>
+                    </div>
+                    <div class="grid-body no-border">
+                           
+                              <h3>Keep an eye on your <span class="semi-bold">Payments </span></h3>
+
+                            <p>Though payment is confirmed, you may not see it in your account for 24 hours. Click in the invoice ID to see details.</p>
+                            <br>
+<table class="table table-hover no-more-tables">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>id</th>
+              <th>User</th>
+              <th>Value</th>
+              <th>Date Issued</th>
+              <th>Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td><a href="x/">hf67qc</a></td>
+              <td>Cris T.</td>
+              <td>$55.00</td>
+              <td>29/06/2014</td>
+              <td><span class="label label-important">Unpaid</span>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td><a href="#">a54se7</a></td>
+              <td>Kylie M.</td>
+              <td>$ 150.00</td>
+              <td>02/05/2014</td>
+              <td><span class="label label-important">Unpaid</span>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td><a href="#">ki689o</a></td>
+              <td>Kelsie I.</td>
+              <td>$70.00</td>
+              <td>15/04/2014</td>
+              <td><span class="label label-success">Paid</span>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td><a href="#">oi89kj</a></td>
+              <td>Phil R.</td>
+              <td>$55.00</td>
+              <td>29/03/2014</td>
+              <td><span class="label label-success">Paid</span>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td><a href="#">ok903k</a></td>
+              <td>Tyler C.</td>
+              <td>$80.00</td>
+              <td>15/03/2014</td>
+              <td><span class="label label-success">Paid</span>
+          </tr>
+      </tbody>
+  </table>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">          
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="grid simple ">
+                                    <div class="grid-title no-border">
+                                          <h4>Montly <span class="semi-bold">Statistics</span></h4>
+                                        <div class="tools"> <a href="javascript:;" class="collapse"></a>
+                      <a href="#grid-config" data-toggle="modal" class="config"></a>
+                      <a href="javascript:;" class="reload"></a>
+                      <a href="javascript:;" class="remove"></a>
+                                        </div>
+                                    </div>
+                                    <div class="grid-body no-border">
+                       <h3>Your montly <span class="semi-bold">Income</span></h3>
+                       <p>
+                       Watch your montly statistics and see how your wealth increases, thanks to our amazing platform.
+                       </p>
+                       <br>
+                       <table class="table table-bordered no-more-tables">
+                        <thead>
+                          <tr>
+                            <th style="width:1%">
+                              
+                            </th>
+                            <th class="text-center" style="width:12%">Month</th>
+                            <th class="text-center" style="width:22%">Income</th>
+                            <th class="text-center" style="width:6%">Business Health</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td class="text-center">January</td>
+                                                        <td class="text-right">$ 10,000.00</td>
+                                                        <td class="text-center"> 
+                                                          <span class="label label-success">62</span>
+                                                        </td>
+                                                    </tr>
+                          <tr>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td class="text-center">February</td>
+                                                        <td class="text-right">$ 11,800.00</td>
+                                                        <td class="text-center">
+                                                                <span class="label label-success">67</span>                         
+                                                        </td>
+                                                    </tr>
+                          <tr>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td class="text-center">March</td>
+                                                        <td class="text-right">$ 12,500.00</td>
+                                                        <td class="text-center">
+                                                          <span class="label label-success">70</span>                        
+                                                        </td>
+                                                    </tr>
+                          <tr>
+                                                        <td>
+                                                           
+                                                        </td>
+                                                        <td class="text-center">April</td>
+                                                        <td class="text-right">$ 16,000.00</td>
+                                                       <td class="text-center">
+                                                              <span class="label label-success">73</span>                               
+                                                        </td>
+                                                    </tr>
+                          <tr>
+                                                        <td>
+                                                           
+                                                        </td>
+                                                        <td class="text-center">May</td>
+                                                        <td class="text-right">$ 19,700.00</td>
+                                                        <td class="text-center">
+                                                                <span class="label label-success">75</span>                        
+                                                        </td>
+                                                    </tr> 
+                        </tbody>
+                       </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>     
+</div>
+
+
+
+
+{% endblock %}

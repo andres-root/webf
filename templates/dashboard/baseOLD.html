@@ -1,0 +1,264 @@
+{% load staticfiles %}
+<title>{% block title %} fyt.com | Dashboard {% endblock %}</title>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Webarch - Responsive Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+<link href="/static/dashboard/plugins/jquery-polymaps/style.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/static/dashboard/plugins/jquery-metrojs/MetroJs.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/static/dashboard/plugins/shape-hover/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="/static/dashboard/plugins/shape-hover/css/component.css" />
+<link rel="stylesheet" type="text/css" href="/static/dashboard/plugins/owl-carousel/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="/static/dashboard/plugins/owl-carousel/owl.theme.css" />
+<link href="/static/dashboard/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/static/dashboard/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/static/dashboard/plugins/jquery-ricksaw-chart/css/rickshaw.css" type="text/css" media="screen" >
+<link href="/static/dashboard/plugins/jquery-isotope/isotope.css" rel="stylesheet" type="text/css"/>
+<!-- BEGIN CORE CSS FRAMEWORK -->
+<link href="/static/dashboard/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/dashboard/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/dashboard/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="/static/dashboard/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<!-- END CORE CSS FRAMEWORK -->
+
+<!-- BEGIN CSS TEMPLATE -->
+<link href="/static/dashboard/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/static/dashboard/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="/static/dashboard/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
+<link href="/static/dashboard/css/magic_space.css" rel="stylesheet" type="text/css"/>
+<!-- END CSS TEMPLATE -->
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse "> 
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+	<div class="header-seperation"> 
+		<ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">	
+		 <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
+		</ul>
+      <!-- BEGIN LOGO -->	
+      <a href="/"></a>
+      <!-- END LOGO --> 
+      <ul class="nav pull-right notifcation-center">	
+        <li class="dropdown" id="header_task_bar"> <a href="/" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
+        <li class="dropdown" id="header_inbox_bar" > <a href="/dashboard/" class="dropdown-toggle" > <div class="iconset top-messages"></div>  <span class="badge badge-info" id="msgs-badge">3</span> </a></li>
+		<li class="dropdown" id="portrait-chat-toggler" style="display:none"> <a href="#sidr" class="chat-menu-toggle"> <div class="iconset top-chat-white "></div> </a> </li>        
+      </ul>
+      </div>
+      <!-- END RESPONSIVE MENU TOGGLER --> 
+      <div class="header-quick-nav" > 
+      <!-- BEGIN TOP NAVIGATION MENU -->
+	  <div class="pull-left"> 
+        <ul class="nav quick-section">
+          <li class="quicklinks"> <a href="#" class="" id="layout-condensed-toggle" >
+            <div class="iconset top-menu-toggle-dark"></div>
+            </a> </li>
+        </ul>
+       
+	  </div>
+	 <!-- END TOP NAVIGATION MENU -->
+	 <!-- BEGIN CHAT TOGGLER -->
+      <div class="pull-right"> 
+		<div class="chat-toggler">	
+				<a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom"  data-content='' data-toggle="dropdown" data-original-title="Notifications">
+					<div class="user-details"> 
+						<div class="username">
+							{{ user.first_name }} <span class="bold">{{ user.last_name }}</span>									
+						</div>						
+					</div> 
+					<div class="iconset top-down-arrow"></div>
+				</a>	
+				<div id="notification-list" style="display:none">
+					<div style="width:300px">
+						  <div class="notification-messages info">
+									<div class="user-profile">
+										<img src="/static/dashboard/img/profiles/d.jpg"  alt="" data-src="/static/dashboard/img/profiles/d.jpg" data-src-retina="/static/dashboard/img/profiles/d2x.jpg" width="35" height="35">
+									</div>
+									<div class="message-wrapper">
+										<div class="heading">
+											David Nester sent you a message
+										</div>
+										<div class="description">
+											Session postponed to tomorrow
+										</div>
+										<div class="date pull-left">
+										A min ago
+										</div>										
+									</div>
+									<div class="clearfix"></div>									
+								</div>	
+							<div class="notification-messages danger">
+								<div class="iconholder">
+									<i class="icon-warning-sign"></i>
+								</div>
+								<div class="message-wrapper">
+									<div class="heading">
+										You have an alert
+									</div>
+									<div class="description">
+										Please confirm your email
+									</div>
+									<div class="date pull-left">
+									2 mins ago
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>	
+							<div class="notification-messages success">
+								<div class="user-profile">
+									<img src="/static/dashboard/img/profiles/h.jpg"  alt="" data-src="/static/dashboard/img/profiles/h.jpg" data-src-retina="/static/dashboard/img/profiles/h2x.jpg" width="35" height="35">
+								</div>
+								<div class="message-wrapper">
+									<div class="heading">
+										You have got 150 messages
+									</div>
+									<div class="description">
+										150 newly unread messages in your inbox
+									</div>
+									<div class="date pull-left">
+									An hour ago
+									</div>									
+								</div>
+								<div class="clearfix"></div>
+							</div>							
+						</div>				
+				</div>
+				<div class="profile-pic"> 
+					<img src="/static/dashboard/img/profiles/avatar_small.jpg"  alt="" data-src="/static/dashboard/img/profiles/avatar_small.jpg" data-src-retina="/static/dashboard/img/profiles/avatar_small2x.jpg" width="35" height="35" /> 
+				</div>       			
+			</div>
+		 <ul class="nav quick-section ">
+			<li class="quicklinks"> 
+				<a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">						
+					<div class="iconset top-settings-dark "></div> 	
+				</a>
+				<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                  <li><a href="/dashboard/profile/"> My Account</a>
+                  </li>
+                  <li><a href="/dashboard/calendar/">My Calendar</a>
+                  </li>
+                  <li><a href="/dashboard/messages/"> My Inbox&nbsp;&nbsp;<span class="badge badge-info animated bounceIn">2</span></a>
+                  </li>
+                  <li class="divider"></li>                
+                  <li><a href="/signout/"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
+               </ul>
+			</li> 
+			
+			
+				
+		</ul>
+      </div>
+	   <!-- END CHAT TOGGLER -->
+      </div> 
+      <!-- END TOP NAVIGATION MENU --> 
+   
+  </div>
+  <!-- END TOP NAVIGATION BAR --> 
+</div>
+<!-- END HEADER -->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+  <!-- BEGIN SIDEBAR -->
+  <div class="page-sidebar" id="main-menu"> 
+  <!-- BEGIN MINI-PROFILE -->
+   <div class="page-sidebar-wrapper" id="main-menu-wrapper"> 
+   <div class="user-info-wrapper">	
+	<div class="profile-wrapper">
+		<img src="/static/dashboard/img/profiles/avatar.jpg"  alt="" data-src="/static/dashboard/img/profiles/avatar.jpg" data-src-retina="/static/dashboard/img/profiles/avatar2x.jpg" width="69" height="69" />
+	</div>
+    <div class="user-info">
+      <div class="username">{{ user.first_name }} <span class="semi-bold">{{ user.last_name }}</span></div>
+      
+    </div>
+   </div>
+  <!-- END MINI-PROFILE -->
+   
+   <!-- BEGIN SIDEBAR MENU -->	
+      <p class="menu-title"></p>
+
+    <ul>	
+      <li id="home" class="active"> <a href="/dashboard/"> <i class="fa fa-home"></i> <span class="title">Home</span></a> </li>
+        <li id="calendar-menu" class=""> <a href="/dashboard/calendar/"> <i class="fa fa-calendar"></i> <span class="title">Calendar</span> </a> </li>
+        <li class=""> <a href="/dashboard/"> <i class="fa fa-envelope"></i> <span class="title">Messages</span> <span class=" badge badge-disable pull-right ">20</span></a> </li>
+        <li class=""> <a href="/dashboard/reviews/"> <i class="fa fa-comment"></i> <span class="title">Reviews</span> <span class=" badge badge-disable pull-right ">10</span></a> </li>
+        <li class=""> <a href="/dashboard/"> <i class="fa fa-dollar"></i> <span class="title">Invoices</span> <span class=" badge badge-disable pull-right ">2</span></a> </li>
+        <li class=""> <a href="/dashboard/"> <i class="fa fa-shield"></i> <span class="title">Verification</span> <span class="label label-info pull-right ">NEW</span></a> </li>
+        <li class=""> <a href="/dashboard/"> <i class="fa fa-plus-square"></i> <span class="title">Business Health</span> <span class="badge label-info pull-right ">75</span></a> </li>  
+    </ul>
+	<div class="clearfix"></div>
+    <!-- END SIDEBAR MENU --> 
+  </div>
+  </div>
+  <a href="#" class="scrollup">Scroll</a>
+   <div class="footer-widget">
+    <div class="title">Complete Profile</div>
+	<div class="progress transparent progress-small no-radius no-margin">
+		<div data-percentage="79%" class="progress-bar progress-bar-success animate-progress-bar" ></div>		
+	</div>
+	<div class="pull-right">
+		<div class="details-status">
+		<span data-animation-duration="560" data-value="86" class="animate-number"></span>%
+	</div>	
+	</div>
+  </div>
+  <!-- END SIDEBAR --> 
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="page-content"> 
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">
+		{% block content %}  
+    	{% endblock %}
+    </div>
+  </div>
+ </div>
+<!-- END CONTAINER --> 
+<!-- BEGIN CHAT --> 
+
+<!-- END CHAT --> 
+<!-- END CONTAINER -->
+<!-- BEGIN CORE JS FRAMEWORK--> 
+<script src="/static/dashboard/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
+<script src="/static/dashboard/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> 
+<script src="/static/dashboard/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="/static/dashboard/plugins/breakpoints.js" type="text/javascript"></script> 
+<script src="/static/dashboard/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script> 
+<!-- END CORE JS FRAMEWORK --> 
+<!-- BEGIN PAGE LEVEL JS --> 	
+<script src="/static/dashboard/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script> 	
+<script src="/static/dashboard/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script> 
+<script src="/static/dashboard/plugins/pace/pace.min.js" type="text/javascript"></script>  
+<script src="/static/dashboard/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+<script src="/static/dashboard/plugins/jquery.cookie.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS --> 	
+
+<!-- BEGIN CORE TEMPLATE JS --> 
+<script src="/static/dashboard/js/core.js" type="text/javascript"></script> 
+<script src="/static/dashboard/js/chat.js" type="text/javascript"></script> 
+<script src="/static/dashboard/js/demo.js" type="text/javascript"></script> 
+<!-- END CORE TEMPLATE JS --> 
+<!-- Begin Calendar Javascript -->
+<script src="/static/dashboard/plugins/jquery-ui-touch/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="/static/dashboard/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="/static/dashboard/js/calender.js" type="text/javascript"></script>
+<!-- End Calendar Javascript -->
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+	background-color: #E5E9EC;
+}
+
+.user-info-wrapper {
+	margin: 0;
+}
+
+.user-info-wrapper .profile-wrapper {
+	height: auto;
+	width: auto;
+	border-radius: 0;
+	margin: 0;
+}
+
+.grid.simple .grid-body.no-border.profile-photo {
+	border: 0px;
+	padding-top: 0px;
+}
+
+.grid.simple .grid-body.profile-photo {
+	padding: 0px;
+}

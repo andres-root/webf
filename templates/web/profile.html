@@ -1,0 +1,264 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Fitness.me</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" id="style-css" href="https://necolas.github.io/normalize.css/3.0.1/normalize.css" type="text/css" media="all">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static "css/profile.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/sidebar.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/inbox.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
+        
+        
+        
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <form action="search.html" class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control top-search" placeholder="Search by keyword or trainer">
+				        </div>
+				        <a href="search.html"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button></a>
+				      </form>
+				      <ul class="nav navbar-nav navbar-right">
+				      		{% if user.is_authenticated %}
+				      			<div class="btn-group">
+				      			  <div class="btn-group">
+				      			    <button type="button" class="profile-btn btn btn-default dropdown-toggle" data-toggle="dropdown">
+				      			      {{ user.username }}
+				      			      <span class="caret"></span>
+				      			    </button>
+				      			    <ul class="dropdown-menu">
+				      			      <li><a href="/dashboard/">Dashboard</a></li>
+				      			      <li><a href="/signout/">Log Out</a></li>
+				      			    </ul>
+				      			  </div>
+				      			</div>
+				      		{% else %}
+					        	<li class="red"><a href="/signup/">Sign Up</a></li>
+				        		<li class="blue"><a data-toggle="modal" data-target=".bs-example-modal-sm" href="#">Log In</a></li>
+				      		{% endif %}
+				        <!-- Small modal -->
+
+
+				      		
+					        	
+				      		
+				        
+				     <!--    <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+				        </li> -->
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav><!-- End Navbar-->
+				<section class="first">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-1">
+								<figure class="trainer-pic">
+									<img src="{% static "img/trainer.jpg" %}" />
+								</figure>
+							</div>
+							<div class="col-md-4">
+								<div class="trainer-data">
+					      			<h3>{{ user.username }}</h3>
+									<p>Professional Trainer</p>
+								</div>
+							</div>
+							<div class="col-md-4"></div>
+						</div>							
+					</div>
+				</section><!--End First Section
+				<section class="second">
+			      
+				</section>End Second Section-->
+				<section class="third">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="row details-cont">
+										
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<span class="glyphicon glyphicon-user"></span>
+									</div>
+									<div class="col-md-8">
+										<h3>Profile</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont">
+									<a href="/profile/calendar">
+										<div class="col-sm-2">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</div>
+										<div class="col-md-8">
+											<h3>Calendar</h3>
+										</div>
+									</a>
+								</div>
+								<div class="row menu-item-cont active">
+									<a href="/profile/">
+										<div class="col-sm-2">
+											<span class="glyphicon glyphicon-send"></span>
+										</div>
+										<div class="col-md-8">
+											<h3>Messages</h3>
+										</div>
+									</a>
+								</div>
+								<div class="row menu-item-cont">
+									<a href="/profile/">
+										<div class="col-sm-2">
+											<span class="glyphicon glyphicon-flash"></span>
+										</div>
+										<div class="col-md-8">
+											<h3>Invoices</h3>
+										</div>
+									</a>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<span class="glyphicon glyphicon-ok-circle"></span>
+									</div>
+									<div class="col-md-8">
+										<h3>Verification</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<span class="glyphicon glyphicon-info-sign"></span>
+									</div>
+									<div class="col-md-8">
+										<h3>Complete Profile</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<span class="glyphicon glyphicon-plus-sign"></span>
+									</div>
+									<div class="col-md-8">
+										<h3>Business Health</h3>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="content">
+								
+
+
+
+										<div class="row">
+        		  		<div class="col-lg-3">
+        		  			<div class="message-list">
+        		  				<ul class="sidebar-nav">
+			                <!--li class="sidebar-brand"><a href="#">aaa</a>
+			                </li-->
+			                			{% for m in messages %}
+				                			<li>
+							               		<div class="thumb-cont">
+									               <a class="" href="dashboard.html">
+									               	<h4>{{ m.id_sender.username }}</h4>
+									               	<p>{{ m.date_created }}</p>	               		
+									               </a>
+								               </div>
+							                </li>
+			                			{% endfor %}
+			            		</ul>	
+        		  			</div>
+        		  		</div>
+        		  		<div class="col-lg-6">
+        		  			<div class="row">
+        		  				<div class="col-lg-7">
+        		  				</div>
+        		  				<div class="col-lg-6">
+        		  					<h3><DEL></DEL></h3>
+        		  				</div>
+        		  				<div class="col-lg-2">
+        		  				</div>
+        		  			</div>
+        		  			<div class="row">
+        		  				<div class="container-fluid">
+        		  					<div class="col-lg-12">
+		        		  				<div class="message">
+			        		  				<!--Comment -->
+													<div id="comments">
+														<div class="row">
+															<div class="col-md-2">
+																<figure>
+																	<img src="{% static "img/profile-pic.jpg" %}">
+																</figure>
+															</div>
+															<div class="col-md-8">
+																<div class="comment-cont">
+																	<p>{{ first_message.message}} </p>
+																</div>
+															</div>
+														</div>
+													</div>
+		        		  				</div>
+        		  					</div>
+	        		  			</div>
+        		  			</div>
+        		  			
+        		  			<div class="row response-cont">
+        		  				<form method="post" action="/profile/{{user.id}}">
+        		  					{% csrf_token %}
+	        		  				<div class="col-lg-10 response-cont">
+	        		  					<div class="row">
+	        		  						<div class="col-md-10">
+	        		  							<textarea class="form-control"></textarea>
+	        		  						</div>
+	        		  						<div class="col-md-2">
+					        		  			<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span></button>
+	        		  						</div>
+	        		  					</div>		        		  			
+	       		  					</div>
+       		  					</form>
+
+        		  				</div>
+        		  				
+        		  			</div>
+        		  		</div>
+        		  	</div>
+
+
+								</div>
+									</section>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</section>
+		</div>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	</body>
+</html>

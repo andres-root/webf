@@ -1,0 +1,284 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Fitness.me</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" id="style-css" href="https://necolas.github.io/normalize.css/3.0.1/normalize.css" type="text/css" media="all">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static "css/profile-calendar.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/dashboard.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
+        
+
+        <link rel="stylesheet" type="text/css" media="print" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.0/fullcalendar.print.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.0/fullcalendar.css">
+        <style>
+        	#calendar {
+        		width: 900px;
+        		margin: 40px auto;
+        	}
+        </style>
+        
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">Logo</a>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!--       <ul class="nav navbar-nav">
+				        <li class="active"><a href="#">Link</a></li>
+				        <li><a href="#">Link</a></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">One more separated link</a></li>
+				          </ul>
+				        </li>
+				      </ul> -->
+				      <form class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Trainer/Keyword">
+				        </div>
+				        <button type="submit" class="btn btn-default">Search</button>
+				      </form>
+				      <ul class="nav navbar-nav navbar-right">
+				        	{% if user.is_authenticated %}
+				      			<div class="btn-group">
+				      			  <div class="btn-group">
+				      			    <button type="button" class="profile-btn btn btn-default dropdown-toggle" data-toggle="dropdown">
+				      			      {{ user.username }}
+				      			      <span class="caret"></span>
+				      			    </button>
+				      			    <ul class="dropdown-menu">
+				      			      <li><a href="#">Dashboard</a></li>
+				      			      <li><a href="/signout/">Log Out</a></li>
+				      			    </ul>
+				      			  </div>
+				      			</div>
+				      		{% else %}
+					        	<li><a href="/signup/">Sign Up</a></li>
+				        		<li><a href="#">Sign In</a></li>
+				      		{% endif %}
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+				        </li> 
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav><!-- End Navbar-->
+				<section class="first">
+			      <div class="container-fluid">
+			      	<div class="row">
+			      			<h1>JJ Fitness</h1>
+
+			      		<div class="col-lg-12">
+			      		</div>
+			      	</div>
+			      </div>
+				</section><!--End First Section-->
+				<section class="second">
+			      <div class="container-fluid">
+			      	<div class="row">
+			      		<div class="col-lg-3">
+			      			<figure>
+			      				<img src="{% static "img/web-assets-32.png" %}"/>
+			      			</figure>
+			      		</div>
+			      		<div class="col-lg-8 trainer-info">
+			      			<div class="row">
+				      		    <div class="col-md-8">
+				      		    	<div class="row">
+				      		    		<div class="col-md-4">
+				      		    			<h1 class="value">$55</h1>
+				      		    			<p>per session</p>
+				      		    		</div>
+				      		    		<div class="col-md-8">
+				      		    			<div class="row">
+				      		    				<h3>Promotions</h3>
+				      		    				<p>Book 10 or more sessions for 15% off!</p>
+				      		    			</div>
+				      		    			<div class="row">
+				      		    				<h3>Groups</h3>
+				      		    				<p>$10 for each individual add on</p>
+				      		    			</div>
+				      		    		</div>
+				      		    	</div>
+			      					<div class="row trainer-info">
+					      				<div class="col-md-9">
+					      					<p>
+					      						Tags
+					      					</p>
+					      					<span class="label label-info">Group</span>
+					      					<span class="label label-info">Individual</span>
+					      					<span class="label label-info">Weight loss</span>
+					      					<span class="label label-info">Endurance</span>
+					      					<span class="label label-info">Has facilities</span>
+					      					<span class="label label-info">Swimming</span>
+					      					<span class="label label-info">Male</span>
+					      					<span class="label label-info">Female</span>
+					      					<span class="label label-info">Promotion</span>
+					      					<span class="label label-info">Group Rate</span>
+					      					<span class="label label-default">Add +</span>
+					      				</div>
+				      					<div class="col-md-4">
+				      					
+				      					</div>
+						        	</div>
+						        </div>
+				      		    <div class="col-md-3">
+					      		    <div class="row booking">
+					      		    	
+					      		    </div>
+					      		    
+				      		    </div>
+					        </div>
+			      	</div>
+			      </div>
+				</section><!--End Second Section-->
+				<section class="third">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="row details-cont">
+										
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<figure>
+											<img src="{% static "img/web-assets-33.png" %}">
+										</figure>
+									</div>
+									<div class="col-md-8">
+										<h3>Profile</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont active">
+									<a href="/profile/calendar">
+										<div class="col-sm-2">
+											<figure>
+												<img src="{% static "img/web-assets-33.png" %}">
+											</figure>
+										</div>
+										<div class="col-md-8">
+											<h3>Calendar</h3>
+										</div>
+									</a>
+								</div>
+								<div class="row menu-item-cont">
+									<a href="/profile/">
+										<div class="col-sm-2">
+											<figure>
+												<img src="{% static "img/web-assets-33.png" %}">
+											</figure>
+										</div>
+										<div class="col-md-8">
+											<h3>Invoice</h3>
+										</div>
+									</a>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<figure>
+											<img src="{% static "img/web-assets-33.png" %}">
+										</figure>
+									</div>
+									<div class="col-md-8">
+										<h3>Settings</h3>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="content">
+								
+									<div id="calendar">
+										  		
+									</div>
+								</div>
+									</section>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</section>
+		</div>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+         <script src="{% static "js/calendar/moment.min.js" %}"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.0/fullcalendar.min.js"></script>
+		<script src="{% static "js/calendar/jquery-ui.custom.min.js" %}"></script>
+
+        <script type="text/javascript">
+        	$('#myTab a').click(function (e) {
+        	  e.preventDefault()
+        	  $(this).tab('show')
+        	})
+        </script>
+      	<script>
+      		$(document).ready(function() {
+      			$('#calendar').fullCalendar({
+      				defaultDate: '2014-06-12',
+      				editable: false,
+      				events: [
+      					{
+      						title: 'Booked All Day',
+      						start: '2014-06-01'
+      					},
+      					{
+      						title: 'Booked',
+      						start: '2014-06-09T08:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-09T16:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-09T16:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-10T15:00:00'
+      					},
+      					{
+      						id: 999,
+      						title: 'Booked',
+      						start: '2014-06-11T09:00:00'
+      					},
+      				]
+      			});
+      			
+      		});
+      	</script>
+	</body>
+</html>

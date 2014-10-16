@@ -1,0 +1,141 @@
+/**
+Customized Bootstrap Styles
+**/
+.navbar {
+	margin-bottom: 0 !important;
+	background: #fff;
+}
+
+.form-control.top-search {
+	width: 211px;
+}
+
+.navbar-nav .blue a {
+	color: #5bc0de !important;
+	font-weight: bold;
+}
+
+.navbar-nav .red a {
+	color: red !important;
+	font-weight: bold;
+}
+
+.row.transparent-black {
+	margin-left: 138px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 4px;
+	width: 268px;
+	height: auto;
+	text-align: left
+}
+
+.row.transparent-black .col-md-6 {
+	padding: 0;
+	width: 170px;
+}
+
+.modal-content.login-modal {
+	padding: 10px;
+	overflow: hidden;
+}
+
+
+
+
+/**
+General Styles
+**/
+
+
+
+.first {
+	width: 100%;
+	height: 500px;
+	/*background: url('../img/web-assets/web-assets-31.png') no-repeat;*/
+	background: url('../img/index2.jpe	g') no-repeat;
+	background-size: cover;
+}
+
+.first .search-cont {
+	text-align: center;
+
+	width: 550px;
+	margin: 300px auto;
+}
+
+.first .search-cont h1 {
+	color: #fff;
+	font-weight: bolder;
+	text-shadow: 1px 0px 7px rgba(150, 150, 150, 1);
+}
+
+.first .search-cont p {
+	font-size: 18px	;
+	color: #fff;
+	font-weight: bolder;
+	text-shadow: 1px 0px 7px rgba(150, 150, 150, 1);
+}
+
+.second {
+	background: #efefef;
+	border: 1px solid #e7e7e7;
+}
+
+.second .grid-cont {
+	margin-top: 0;
+	margin-left: 70px;
+}
+
+.second .grid-cont .trainor-cont {
+	width: 315px;
+	height: 165px;
+	padding: 0;
+	margin: 0 25px 25px 0;
+}
+
+.second .grid-cont .trainor-cont img {
+	width: 315px;
+	height: 165px;
+}
+
+.second .grid-cont .trainor-cont article {
+	width: 315px;
+	height: 165px;
+}
+
+.third {
+	width: 100%;
+	height: 300px;
+	border-top: 1px solid #e7e7e7;
+	background: url('../img/web-assets/web-assets-30.png') repeat;
+	color: #fff;
+}
+
+.third .grid-cont {
+	margin-top: 0;
+	margin-left: 70px;
+}
+
+.third .grid-cont .trainor-cont {
+	width: 315px;
+	height: 165px;
+	padding: 0;
+	margin: 0 25px 25px 0;
+}
+
+.third .grid-cont .trainor-cont img {
+	width: 120px;
+	height: 120px;
+	padding-top: 15px;
+}
+
+.third .grid-cont .trainor-cont article {
+	width: 315px;
+	height: 165px;
+}
+
+footer {
+	height: 100px;
+	background: #7f8c8d;
+	color: #fff;
+}

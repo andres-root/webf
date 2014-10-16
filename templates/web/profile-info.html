@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Fitness.me</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" id="style-css" href="https://necolas.github.io/normalize.css/3.0.1/normalize.css" type="text/css" media="all">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/profile.css">
+        <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="css/inbox.css">
+        
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <a class="navbar-brand" href="#">Logo</a>
+				    </div>
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!--       <ul class="nav navbar-nav">
+				        <li class="active"><a href="#">Link</a></li>
+				        <li><a href="#">Link</a></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">One more separated link</a></li>
+				          </ul>
+				        </li>
+				      </ul> -->
+				      <form class="navbar-form navbar-left" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Trainer/Keyword">
+				        </div>
+				        <button type="submit" class="btn btn-default">Search</button>
+				      </form>
+				      <ul class="nav navbar-nav navbar-right">
+				        	{% if user.is_authenticated %}
+				      			<h3>{{ user.username }}</h3>
+				      		{% else %}
+					        	<li><a href="/signup/">Sign Up</a></li>
+				        		<li><a href="#">Sign In</a></li>
+				      		{% endif %}
+				          <ul class="dropdown-menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+				        </li> 
+				      </ul>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav><!-- End Navbar-->
+				<section class="first">
+			      <div class="container-fluid">
+			      	<div class="row">
+			      			<h1>JJ Fitness</h1>
+
+			      		<div class="col-lg-12">
+			      		</div>
+			      	</div>
+			      </div>
+				</section><!--End First Section-->
+				<section class="second">
+			      <div class="container-fluid">
+			      	<div class="row">
+			      		<div class="col-lg-3">
+			      			<figure>
+			      				<img src="img/web-assets-32.png" />
+			      			</figure>
+			      		</div>
+			      		<div class="col-lg-8 trainer-info">
+			      			<div class="row">
+				      		    <div class="col-md-8">
+				      		    	<div class="row">
+				      		    		<div class="col-md-4">
+				      		    			<h1 class="value">$55</h1>
+				      		    			<p>per session</p>
+				      		    		</div>
+				      		    		<div class="col-md-8">
+				      		    			<div class="row">
+				      		    				<h3>Promotions</h3>
+				      		    				<p>Book 10 or more sessions for 15% off!</p>
+				      		    			</div>
+				      		    			<div class="row">
+				      		    				<h3>Groups</h3>
+				      		    				<p>$10 for each individual add on</p>
+				      		    			</div>
+				      		    		</div>
+				      		    	</div>
+			      					<div class="row trainer-info">
+					      				<div class="col-md-9">
+					      					<p>
+					      						Tags
+					      					</p>
+					      					<span class="label label-info">Group</span>
+					      					<span class="label label-info">Individual</span>
+					      					<span class="label label-info">Weight loss</span>
+					      					<span class="label label-info">Endurance</span>
+					      					<span class="label label-info">Has facilities</span>
+					      					<span class="label label-info">Swimming</span>
+					      					<span class="label label-info">Male</span>
+					      					<span class="label label-info">Female</span>
+					      					<span class="label label-info">Promotion</span>
+					      					<span class="label label-info">Group Rate</span>
+					      					<span class="label label-default">Add +</span>
+					      				</div>
+				      					<div class="col-md-4">
+				      					
+				      					</div>
+						        	</div>
+						        </div>
+				      		    <div class="col-md-3">
+					      		    <div class="row booking">
+					      		    	
+					      		    </div>
+					      		    
+				      		    </div>
+					        </div>
+			      	</div>
+			      </div>
+				</section><!--End Second Section-->
+				<section class="third">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="row details-cont">
+										
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<figure>
+											<img src="img/web-assets-33.png">
+										</figure>
+									</div>
+									<div class="col-md-8">
+										<h3>Profile</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<figure>
+											<img src="img/web-assets-33.png">
+										</figure>
+									</div>
+									<div class="col-md-8">
+										<h3>Calendar</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<figure>
+											<img src="img/web-assets-33.png">
+										</figure>
+									</div>
+									<div class="col-md-8">
+										<h3>Invoice</h3>
+									</div>
+								</div>
+								<div class="row menu-item-cont">
+									<div class="col-sm-2">
+										<figure>
+											<img src="img/web-assets-33.png">
+										</figure>
+									</div>
+									<div class="col-md-8">
+										<h3>Settings</h3>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="content">
+								
+
+
+
+										<div class="row">
+        		  		<div class="col-lg-3">
+        		  			<div class="message-list">
+        		  				<ul class="sidebar-nav">
+			                <!--li class="sidebar-brand"><a href="#">aaa</a>
+			                </li-->
+						               <li>
+						               		<div class="thumb-cont">
+								               <a class="" href="dashboard.html">
+								               	<h4>Hey there!</h4>
+								               	<p>I need you to take two sessions...</p>	               		
+								               </a>
+							               </div>
+						                </li>
+						                <li>
+						                	<div class="thumb-cont">
+							                	<a class="" href="calendar.html">
+							                		<h4>I want to train this friday</h4>
+								               		<p>It is possible to have...</p>	
+							                	</a>
+						                	</div>
+						                </li>
+						                <li>
+						                	<div class="thumb-cont">
+							                	<a class="" href="inbox.html">
+							                		<h4>Not shure</h4>
+								               		<p>Hi, I'm trying to programm my...</p>	
+							                	</a>
+						                	</div>
+						                </li>
+						                <li>
+						                	<div class="thumb-cont">
+							                	<a class="" href="inbox.html">
+							                		<h4>Information</h4>
+								               		<p>I need more information about...</p>	
+							                	</a>
+						                	</div>
+						                </li>	
+						                <li>
+						                	<div class="thumb-cont">
+							                	<a class="" href="inbox.html">
+							                		<h4>Contact to get a trainer</h4>
+								               		<p>Hi, I'm new on the area. I'd like to...</p>	
+							                	</a>
+						                	</div>
+						                </li>	
+						                <li>
+						                	<div class="thumb-cont">
+							                	<a class="" href="inbox.html">
+							                		<h4>On site trainning</h4>
+								               		<p>Hi, My name is Carl, I wonder if...</p>	
+							                	</a>
+						                	</div>
+						                </li>						               
+			            		</ul>	
+        		  			</div>
+        		  		</div>
+        		  		<div class="col-lg-6">
+        		  			<div class="row">
+        		  				<div class="col-lg-7">
+        		  				</div>
+        		  				<div class="col-lg-6">
+        		  					<h3>Nate Belmore</h3>
+        		  				</div>
+        		  				<div class="col-lg-2">
+        		  				</div>
+        		  			</div>
+        		  			<div class="row">
+        		  				<div class="container-fluid">
+        		  					<div class="col-lg-12">
+		        		  				<div class="message">
+			        		  				<h3>Hey there!</h3>
+			        		  				<p>I need you to take two sessions this week, let me know when works better for you. Thanks, Nate.</p>
+		        		  				</div>
+        		  					</div>
+	        		  			</div>
+        		  			</div>
+        		  			
+        		  			<div class="row response-cont">
+        		  				<div class="col-lg-10 response-cont">
+        		  					<div class="container-fluid">
+        		  			<textarea class="form-control"></textarea>
+        		  			<button type="submit" class="btn btn-primary">Send</button>
+
+        		  					</div>
+
+        		  				</div>
+        		  				
+        		  			</div>
+        		  		</div>
+        		  	</div>
+
+
+								</div>
+									</section>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</section>
+		</div>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	</body>
+</html>
